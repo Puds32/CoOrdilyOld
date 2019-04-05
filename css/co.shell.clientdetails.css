@@ -1,0 +1,66 @@
+/* client top detail screen */
+#co-top-content{
+    display:flex;
+    /* background-color: rgb(150, 199, 238); */
+    margin: 10px 10px 10px 10px;
+    padding: 5px;
+    height: 150px;
+    background-color: slategray;
+}
+
+#co-top-content-d1{
+    /* background-color: azure; */
+    width: 30%;
+    height: 95%;
+}
+ .client-address-item{
+    padding: 4px 16px;
+    border-style: none
+ }
+
+ .client-address-label{
+     margin: 0 10px 0 0;
+     font-weight: bolder;
+     width: 100px;
+ }
+ .co-client-email-label{
+    margin: 0 10px 0 0;
+    font-weight: bolder;
+    width: 100px;
+    display: block;
+}
+
+.co-client-email-data{
+    margin: 0 10px 0 0;
+    /* width: 100px; */
+    display: inline;
+}
+
+/* .client-screen{
+height: 15%;
+width: 99%;
+} */
+
+.layout-list {
+  
+    list-style-type: none;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    
+  }
+  
+  .layout-list li {
+    display: inline-block;
+    padding: 5px;
+    width: 400px;
+    line-height: 5px;
+    font-size: 14px
+    
+  }
+  
+  .content{
+      /* background-color: darkslategray */
+  }
+  /* end client top detail screen */
+

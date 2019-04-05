@@ -1,0 +1,281 @@
+/*
+ * co.shell.css
+ * Shell styles
+*/
+
+.co-shell-head, .co-shell-main, .co-shell-main-nav, .co-shell-main-content, .co-shell-modal {
+  position: absolute;
+}
+
+.co-shell-head {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  background: darkslategray;
+}
+
+.co-shell-head-hamburger {
+  top: 0px;
+  /* left       : 20px; */
+  margin-top: 10px;
+  margin-left: 20px;
+  height: 40px;
+  width: 300px;
+  color: #ddd;
+  background: darkslategray;
+}
+
+#co-back-button {
+  text-align: right;
+  color: #ddd;
+  padding: 0 10px 0 0;
+  margin: 0 0 10px 0;
+  font-size: 28px;
+  height: 40px;
+  line-height: 40px;
+  background: rgb(56, 95, 95);
+}
+
+#co-back-button span {
+  cursor: pointer;
+}
+
+#co-back-button span:hover {
+  color: white;
+}
+
+#slide-in-handle {
+  cursor: pointer;
+}
+
+#slide-in-handle:hover {
+  color: white;
+}
+
+#sign-in {
+  margin-right: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#sign-in:hover {
+  color: white;
+}
+
+#logo {
+  font-size: 24px;
+}
+
+#acct {
+  font-size: 14px;
+  margin-right: 15px;
+  height: 32px;
+}
+
+.co-shell-head-logo {
+  top: 4px;
+  left: 4px;
+  margin: 5px;
+  height: 32px;
+  width: 128px;
+  background: darkslategray;
+  color: #ddd;
+  text-align: center;
+}
+
+.co-shell-head-acct {
+  top: 4px;
+  right: 4px;
+  margin: 5px;
+  width: 300px;
+  height: 38px;
+  line-height: 38px;
+  background: darkslategray;
+  color: #ddd;
+  text-align: end;
+}
+
+.co-shell-main {
+  top: 50px;
+  left: 0;
+  bottom: 40px;
+  right: 0;
+}
+
+.co-shell-main-content, .co-shell-main-nav {
+  top: 0;
+  bottom: 0;
+}
+
+.co-shell-main-nav {
+  display: inline-block;
+  width: 300px;
+  background: darkslategray;
+  z-index: 2;
+}
+
+.co-menu-container {
+  display: flex;
+  height: 99%;
+}
+
+.co-x-closed .co-shell-main-nav {
+  width: 0;
+}
+
+.co-shell-main-content {
+  left: 0px;
+  right: 0;
+  background: #ddd;
+}
+
+.co-x-closed .co-shell-main-content {
+  left: 0;
+}
+
+.co-shell-modal {
+  margin-top: -200px;
+  margin-left: -200px;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  background: #fff;
+  border-radius: 3px;
+  z-index: 2;
+}
+
+/* MENU CONTENT */
+
+/* add new button */
+
+#co-add-client {
+  outline: 0;
+  border-radius: 8px;
+  width: 100px;
+  display: block;
+  position: relative;
+  float: none;
+  margin: 0 auto;
+  background-color: #ddd;
+  border: none;
+  color: grey;
+  text-align: center;
+  font-size: 14px;
+}
+
+#co-add-client:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+/* end */
+
+.co-sidenav-container {
+  margin: 0 5px 0 0;
+  padding: 5px;
+}
+
+.co-sub-menu-container {
+  border-radius: 10px;
+  background: rgb(56, 95, 95);
+  padding: 5px;
+  width: 195px;
+  /* height:80%; */
+}
+
+.k-listview, .k-widget .k-selectable, .sidenav, .co-client-list {
+  border: none;
+  /* border-color: darkolivegreen; */
+  box-shadow: none !important;
+  /* border-width: 5px */
+}
+.k-listview:active{
+  color: white;
+}
+.k-state-selected {
+  background: rgb(56, 95, 95);
+  
+}
+
+/* .listview-noborder .mx-listview-item {
+  border: 0;
+} */
+
+.sidenav {
+  list-style-type: none;
+  margin: 40px 0 0 5px;
+  padding: 0;
+  width: 80px;
+  background-color: darkslategray;
+}
+
+.menu-list-item {
+  padding: 8px 16px;
+  border-style: none
+}
+
+.menu-list-item span {
+  cursor: pointer;
+}
+
+.client-list-item {
+  padding: 8px 0px 0 0;
+  color: #ddd;
+}
+
+/* .client-list-item span.active{
+  color: white;
+  font-weight: bolder;
+} */
+
+.client-list-item:hover{
+  color: white;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+
+.client-list-item span {
+  cursor: pointer;
+}
+
+.co-client-list {
+  /* list-style-type: none; */
+  margin: 10px 0 0 5px;
+  padding: 0;
+  width: 180px;
+  height: 90%;
+  max-height: 90%;
+  overflow-y: auto;
+  background: rgb(56, 95, 95)
+}
+
+.k-listview .k-state-selected { color: white; font-weight: bolder; }
+
+#co-sub-menu-list{
+  height: 93%;
+}
+
+li {
+  color: #ddd;
+  font-size: 15px;
+}
+
+
+/* Change the link color on hover */
+
+li span:hover {
+  background-color: #555;
+  color: white;
+}
+
+.co-shell-main-nav, .co-shell-modal, .co-shell-head-hamburger{
+  display: none;
+}
+
+/* MENU CONTENT END */

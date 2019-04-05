@@ -1,0 +1,52 @@
+/*
+* co.shell.login.css
+* login screen styles
+*/
+
+.co-shell-modal {
+    margin-top: -200px;
+    margin-left: -200px;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    background: #fff;
+    border-radius: 3px;
+    z-index: 2;
+    visibility: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  }
+
+#loginWindow_wnd_title{
+    height:20px;
+}
+.fieldlist{
+    width: 98%;
+    background: white;
+    
+    margin: 0 0 -2em;
+    padding: 0;
+}
+
+.fieldlist li {
+    list-style: none;
+    padding-bottom: 1em;
+    color: darkslategray;
+    font-style: inherit;
+}
+
+.fieldlist .k-maskedtextbox {
+    width: 100%;
+}
+
+.fieldlist .k-button{
+    width: 100px;
+    margin-right: 1em;
+}
+.fieldlist .anchor{
+    width: 50%;
+    margin-right: 4em;
+    cursor: pointer;
+}
+
+

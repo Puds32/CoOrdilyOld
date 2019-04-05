@@ -17,6 +17,11 @@
   },
   "homepage": "https://github.com/Puds32/CoOrdily#readme",
   "dependencies": {
-    "aws-sdk": "^2.414.0"
+    "aws-sdk": "^2.414.0",
+    "flatten-object": "^1.2.0",
+    "jshint": "^2.10.2",
+    "npm": "^6.9.0",
+    "objnest": "^5.0.6",
+    "require.js": "^1.0.0"
   }
 }

@@ -1,0 +1,38 @@
+
+#client-screen-pill-content{
+    display: flex;
+    background-color: antiquewhite;
+    justify-content: center;
+    /* height: 75px; */
+    margin: 10px;
+}
+
+#client-screen-pill-content > div{
+    background-color: antiquewhite;
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 25px;
+    font-size: 20px;
+}
+
+#client-screen-pill-content > div > button{
+    outline: 0;
+    border-radius: 8px;
+    width: 100px;
+    display: block;
+    position: relative;
+    float: none;
+    margin: 0 auto;
+    background-color: #ddd;
+    border: none;
+    color: grey;
+    text-align: center;
+    font-size: 14px;
+}
+
+#client-screen-pill-content > div > button:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+  }
