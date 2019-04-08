@@ -1,4 +1,4 @@
-node_modules
+node_modules/*
 pills.html
 Dustbin/index4.html
 menu.html

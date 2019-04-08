@@ -59,13 +59,17 @@ co.shell = (function () {
     },
     stateMap = { $container: null },
     jqueryMap = {},
+    idMap = {currentClientId: undefined},
     onTapAcct,
     onLogin,
     onLogout,
     onTapMainMenu,
     onTapClientMenu,
+    onTapClientClientPill,
+    onTapClientProjectPill,
     onGotClientListData,
     onGotClientDetailData,
+    onGotProjectListData, 
     getData,
     menuTemplateString,
     menuTemplate,
@@ -166,6 +170,21 @@ co.shell = (function () {
     co.getdata.getClient(_data);
   };
   // 
+  //react to client screen pill selection
+  onTapClientClientPill = function(event, _data){
+   
+    hideLoader();
+    
+    co.shell.clientclient.initModule(jqueryMap.$container.find('#id-client-screen-main-container'), _data);
+    // id-client-screen-main-container
+  };
+
+  onTapClientProjectPill = function(event, _data){
+    _data = idMap.currentClientId;
+    alert(_data);
+    
+  };
+  //
 
   //  got my clients data
   onGotClientListData = function (event, _data) {
@@ -180,7 +199,9 @@ co.shell = (function () {
     hideLoader();
 
     var output = JSON.parse(_data);
-    // alert(_data)
+    idMap.currentClientId = output.Item.UniqueId;
+    
+    
     // alert(Object.keys(output).length);
     var clientData = [];
     for (var i = 0; i < Object.keys(output).length; i++){
@@ -204,6 +225,12 @@ co.shell = (function () {
   };
   // end got client detail
 
+  onGotProjectListData = function (event, _data) {
+    hideLoader();
+    co.shell.projectmenu.initModule(jqueryMap.$subMenuContainer, _data);
+    // load up client list menu
+  };
+  // end got my clients data
 
   onLogin = function (event, _data) {
     jqueryMap.$acct.text(_data);
@@ -257,8 +284,11 @@ co.shell = (function () {
       $.gevent.subscribe($container, 'co-login', onLogin);
       $.gevent.subscribe($container, 'co-main-menu-tap', onTapMainMenu);
       $.gevent.subscribe($container, 'co-client-menu-tap', onTapClientMenu);
+      $.gevent.subscribe($container, 'co-client-client-pill-tap', onTapClientClientPill);
+      $.gevent.subscribe($container, 'co-client-project-pill-tap', onTapClientProjectPill);
       $.gevent.subscribe($container, 'co-got-client-data', onGotClientListData);
       $.gevent.subscribe($container, 'co-got-client-detail-data', onGotClientDetailData);
+      $.gevent.subscribe($container, 'co-got-project-data', onGotProjectListData);
 
       var slide = kendo.fx($("#slide-in-share")).slideIn("right"),
         visible = true;

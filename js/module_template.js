@@ -74,7 +74,13 @@ co.module = (function () {
   //
   initModule = function ( $container ) {
     stateMap.$container = $container;
+    $container.html(configMap.main_html);
+
+
+    $(document).ready(function () {
     setJqueryMap();
+    });
+    
     return true;
   };
   // End public method /initModule/

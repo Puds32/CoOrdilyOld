@@ -10,7 +10,7 @@
   white  : true
 */
 
-/*global $, spa */
+/*global $, AWS */
 
 co.getdata = (function () {
   'use strict';
@@ -21,6 +21,7 @@ co.getdata = (function () {
   var lambda = new AWS.Lambda();
   var getClients;
   var getClient;
+  var getProjects;
 
   // get my client list
   getClients = function (_data) {
@@ -42,6 +43,15 @@ co.getdata = (function () {
     });
   };
   // 
+
+
+// get my project list
+getProjects = function (_data) {
+  $.gevent.publish('co-got-project-data', "Got Projects");
+};
+// end get my project list
+
+
 
   // get selected client details
   getClient = function (_data) {
@@ -74,6 +84,7 @@ co.getdata = (function () {
   return {
     getClients: getClients,
     getClient: getClient,
+    getProjects: getProjects
   };
   //------------------- END PUBLIC METHODS ---------------------
 }());

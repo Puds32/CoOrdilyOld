@@ -28,7 +28,7 @@ co.shell.projectmenu = (function () {
     stateMap  = { $container : null },
     jqueryMap = {},
 
-    setJqueryMap, configModule, initModule;
+    setJqueryMap, projectTemplateString, projectTemplate, initModule;
   //----------------- END MODULE SCOPE VARIABLES ---------------
 
   //------------------- BEGIN UTILITY METHODS ------------------
@@ -78,9 +78,15 @@ co.shell.projectmenu = (function () {
   // Returns    : true
   // Throws     : none
   //
-  initModule = function ( $container ) {
+  initModule = function ( $container, _data) {
+    alert(data);
     stateMap.$container = $container;
+    $container.html(configMap.main_html);
+    $(document).ready(function () {
     setJqueryMap();
+
+    });
+
     return true;
   };
   // End public method /initModule/

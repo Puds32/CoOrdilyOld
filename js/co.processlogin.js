@@ -13,27 +13,26 @@ co.processlogin = (function () {
     AWS.config.credentials.clearCachedId();
     
     
-    getLogin = function (_data, $container) {
+    getLogin = function (_data) {
 
-     stateMap = {$container: null},
-     contentMap = {
-       content_html: String()
-       + '<div class="form-group">'
-       + '<label for="email">Email:</label>'
-       + '<input type="text" class="form-control" id="email">'
-       + '</div>'
-       + '<div class="form-group">'
-       + '<label for="password">Password:</label>'
-       + '<input type="password" class="form-control" id="password">'
-       + '</div>'
-       + '<button type="button" id="login" class="k-button close-button">Close</button>'
-       + '<button type="button" id="forgot" class="k-button open-button">Forgot Password</button>'
-       + '<div id="result"></div>'
-   }
+  //    stateMap = {$container: null},
+  //    contentMap = {
+  //      content_html: String() +
+  //      '<div class="form-group">' +
+  //      '<label for="email">Email:</label>' +
+  //      '<input type="text" class="form-control" id="email">' +
+  //      '</div>' +
+  //      '<div class="form-group">' +
+  //      '<label for="password">Password:</label>' +
+  //      '<input type="password" class="form-control" id="password">' +
+  //      '</div>' +
+  //      '<button type="button" id="login" class="k-button close-button">Close</button>' +
+  //      '<button type="button" id="forgot" class="k-button open-button">Forgot Password</button>' +
+  //      '<div id="result"></div>'
+  //  };
         var input = {
          email: _data.$email,
          password: _data.$password
-         
        };
        
        

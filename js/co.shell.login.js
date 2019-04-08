@@ -18,33 +18,33 @@ co.shell.login = (function () {
   //---------------- BEGIN MODULE SCOPE VARIABLES --------------
   var
   configMap = {
-    main_html: String()
-    + '<div id="loginWindow" class="co-shell-main-content-login">'
-    + '</div>'
+    main_html: String() +
+    '<div id="loginWindow" class="co-shell-main-content-login">' +
+    '</div>'
     
 },
 contentMap = {
-    content_html: String()      
-    + '<div class="content k-content">'
-        + '<ul class="fieldlist">'
-            + '<li>'
-                + '<h4 for="email">Email:</h4>'
-                + '<input type="text" id="email">'
-            + '</li>'
-            + '<li>'
-                + '<h4 for="password">Password:</h4>'
-                + '<input type="password" id="password">'
-            + '</li>'
-            + '<li>'
-                + '<button type="button" id="login" class="k-button login-button">Login</button>'
-                + '<button type="button" id="cancel" class="k-button cancel-button">Cancel</button>'
-            + '</li>'
-            + '<li>'
-            + '<label class="anchor lost-password">Lost Password</label>'
-            + '</li>'
-        + '</ul>'
-        + '<div id="co-login-loader" class="co-shell-loader"></div>'
-    + '</div>'
+    content_html: String() +      
+    '<div class="content k-content">' +
+        '<ul class="fieldlist">' +
+            '<li>' +
+                '<h4 for="email">Email:</h4>' +
+                '<input type="text" id="email">' +
+            '</li>' +
+            '<li>' +
+                '<h4 for="password">Password:</h4>' +
+                '<input type="password" id="password">' +
+            '</li>' +
+            '<li>' +
+                '<button type="button" id="login" class="k-button login-button">Login</button>' +
+                '<button type="button" id="cancel" class="k-button cancel-button">Cancel</button>' +
+            '</li>' +
+            '<li>' +
+            '<label class="anchor lost-password">Lost Password</label>' +
+            '</li>' +
+        '</ul>' +
+        '<div id="co-login-loader" class="co-shell-loader"></div>' +
+    '</div>'
    
     
 },
@@ -66,7 +66,7 @@ contentMap = {
 
     jqueryMap = { 
         $container : $container,
-        $loginWindow: $container.find('#loginWindow')}
+        $loginWindow: $container.find('#loginWindow')};
   };
   // End DOM method /setJqueryMap/
 
@@ -157,12 +157,12 @@ function showPage() {
             var password = document.getElementById('password');
             loginObject = {$email: email.value, $password: password.value};
             showPage();
-            co.processlogin.getLogin(loginObject, jqueryMap.$loginWindow);
+            co.processlogin.getLogin(loginObject);
         });
 
         
         $(".lost-password").click(function() {
-            ppm.shell.lostpassword.initModule(jqueryMap.$loginWindow)
+            // ppm.shell.lostpassword.initModule(jqueryMap.$loginWindow)
         });
 
         // $("#email").val("mikemckenna47@gmail.com");
