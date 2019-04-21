@@ -1,4 +1,4 @@
-node_modules/*
+node_modules/aws-sdk
 pills.html
 Dustbin/index4.html
 menu.html
@@ -16,3 +16,4 @@ Dustbin/media-html.html
 Dustbin/panels.html
 Dustbin/template.html
 Dustbin/test.js
+node_modules

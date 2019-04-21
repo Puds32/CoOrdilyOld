@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>CoOrdily Template</title>
+
+    <!-- third-party stylesheets -->
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.rtl.min.css">
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.default.min.css">
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.mobile.all.min.css">
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.common.min.css">
+    <link href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.common-bootstrap.min.css" rel="stylesheet" />
+    <link href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.bootstrap.min.css" rel="stylesheet" />
+
+    <!-- our stylesheets -->
+    <link rel="stylesheet" href="css/co.css" type="text/css" />
+    <link rel="stylesheet" href="css/co.shell.css" type="text/css" />
+    <link rel="stylesheet" href="css/co.loader.css" type="text/css" />
+    <link rel="stylesheet" href="css/co.shell.login.css" type="text/css" />
+    <link rel="stylesheet" href="css/co.shell.clientdetails.css" type="text/css" />
+    <link rel="stylesheet" href="css/co.shell.clientpills.css" type="text/css" />
+    <link rel="stylesheet" href="css/client_screen_maincontainer.css" type="text/css" />
+
+
+    <!-- third-party javascript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/jq/jquery.event.gevent.js"></script>
+    <script src="js/jq/jquery.event.ue.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2019.1.220/js/jszip.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2019.1.220/js/kendo.all.min.js"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.279.1.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2019.1.220/js/cultures/kendo.culture.en-GB.min.js"></script>
+
+    <!-- our javascript -->
+    <script src="js/co.js"></script>
+    <script src="js/co.shell.js"></script>
+    <script src="js/co.shell.login.js"></script>
+    <script src="js/co.processlogin.js"></script>
+    <script src="js/co.getdata.js"></script>
+    <script src="js/co.shell.clientmenu.js"></script>
+    <script src="js/co.shell.clientdetails.js"></script>
+    <script src="js/co.shell.projectmenu.js"></script>
+    <script src="js/co.shell.clientclient.js"></script>
+
+
+    <script>
+        $(function () {
+            kendo.culture("en-GB");
+            'use strict'
+
+            
+
+            var projectTemplate, projectTemplateString, projectDataSource, projectRowTemplate, projectDetailTemplate;
+
+            projectDetailTemplate = '<div>Name: #: pName #</div><div>Number: #: p_id #</div>' +
+            '<div class="class-project-grid-div-pill"><button type="button" id="id-project-selectproject-pill" class="co-client-details">Select</button></div>'
+
+            projectRowTemplate = '<tr data-uid="#= p_id #"><td ><strong>#: pName #</strong></td>' +
+                '<td><div class="class-project-grid-div-button">' +
+                    '<button type="button" id="id-project-selectproject-pill" class="co-client-details">Select</button></div></td>' +
+                '</tr>'
+            projectTemplateString = '<div class="class-project-grid-div-pill"><button type="button" id="id-project-addproject-pill" class="co-client-details">Add Project</button></div>';
+
+            projectHeaderTemplate = kendo.template(projectTemplateString);
+
+            var project = [{
+                c_id: 1,
+                p_id: 1,
+                pName: 'Project Number 1'
+            },
+            {
+                c_id: 1,
+                p_id: 2,
+                pName: 'Project Number 2'
+            }
+            ];
+
+            var projectModel = kendo.data.Model.define({
+                id: "p_id"
+            })
+
+            projectDataSource = new kendo.data.DataSource({ data: project });
+
+            $("#id-projects-grid").kendoGrid({
+                dataSource: projectDataSource,
+                schema: {
+                    model: projectModel
+                },
+                columns: [
+                    { field: "pName",
+                    headerTemplate: "<strong>Project</strong>"},
+                ],
+                // rowTemplate: projectRowTemplate,
+                detailTemplate: projectDetailTemplate,
+                toolbar: [
+                    { template: projectTemplateString }
+                ],
+            });
+
+        });
+    </script>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="co">
+        <div id="id-client-screen-main-container" class="class-client-screen-main-container">
+            <div id="id-project-screen" class="class-project-screen">
+                <div id="id-projects-grid" class="class-projects-grid">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
